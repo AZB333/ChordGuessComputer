@@ -1,0 +1,209 @@
+*{
+    /* variables */
+    --seashell: #FEF5EF;
+    --sand: #E4BB97;
+    --rose: #9D5C63;
+    --dark-rose: #4e2c30;
+    --wenge: #584B53;
+    --light-blue: #D6E3F8;
+
+    background: var(--sand);
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+button {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    margin: 2px;
+    background-color: var(--rose);
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #622d66;
+}
+
+button.disabled{
+  background-color: var(--dark-rose);
+  cursor: not-allowed;
+  
+}
+
+
+nav li{
+  display: inline;
+}
+
+nav ul{
+  list-style: none;
+}
+
+.title{
+    font-size: 3vw;
+}
+
+.result{
+    color: #900f0f;
+    border: 1px solid black;
+    padding: 2% 0px;
+    width: 100%;
+    list-style: none;
+    border-radius: 15px;
+    margin-bottom:.5px;
+}
+
+.result:hover{
+    cursor: pointer;
+}
+
+
+.result-list{
+    margin: 20px auto;
+    text-align: center;
+    padding: 0;
+    width: 50%;
+}
+
+.score-box{
+  margin: 1%;
+}
+
+.score-box p{
+  margin: 3px;
+}
+
+.search{
+    margin: 20px auto;
+    width: max-content;
+    padding: 14px;
+    border-radius: 28px;
+    background: #F6F6F6;
+    border: 1px solid rgba(0,0,0,.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-input{
+    font-size: 16px;
+    color: #333333;
+    outline: none;
+    border: none;
+    background: transparent;
+
+}
+
+
+/*
+* Piano Keyboard 
+* Author: Luiz Felipe Tartarotti Fialho
+* @LFeh / luizfelipe.tf.13@gmail.com
+* http://www.felipefialho.com/
+*/
+.wrap {
+  position: relative;
+}
+.piano-ul {
+ list-style-type: none;
+ width: 100%;
+}
+
+.piano-div{
+  display: flex;
+  justify-content: center;
+  /* max-height: 35vh; */
+  width: 100%;
+}
+
+.piano {
+  background: -webkit-linear-gradient(-65deg, #000000, #222222, #000000, #666666, #222222 75%);
+  background: -moz-linear-gradient(-65deg, #000000, #222222, #000000, #666666, #222222 75%);
+  background: -o-linear-gradient(-65deg, #000000, #222222, #000000, #666666, #222222 75%);
+  background: linear-gradient(-65deg, #000000, #222222, #000000, #666666, #222222 75%);
+  border-top: 2px solid #111;
+  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.5), inset 0 -4px 5px #000000;
+  padding: 0 0% 3%;
+  text-align: center;
+  width: 70vw;
+}
+.key {
+  display: inline-block;
+  position: relative;
+  margin: 0 .5px;
+  width: 6%;
+  /* max-width: 85px; */
+  max-width: 5%;
+  cursor: pointer;
+}
+.key:active .black-key,
+.key.active .black-key {
+  top: -5px;
+}
+.key .white-key {
+  background: -webkit-linear-gradient(-30deg, #f8f8f8, #ffffff);
+  background: -moz-linear-gradient(-30deg, #f8f8f8, #ffffff);
+  background: -o-linear-gradient(-30deg, #f8f8f8, #ffffff);
+  background: linear-gradient(-30deg, #f8f8f8, #ffffff);
+  box-shadow: inset 0 1px 0px #ffffff, inset 0 -1px 0px #ffffff, inset 1px 0px 0px #ffffff, inset -1px 0px 0px #ffffff, 0 4px 3px rgba(0, 0, 0, 0.7), inset 0 -1px 0px #ffffff, inset 1px 0px 0px #ffffff, inset -1px -1px 15px rgba(0, 0, 0, 0.5), -3px 4px 6px rgba(0, 0, 0, 0.5);
+  display: block;
+  /* height: 300px; */
+  height: 25vh;
+}
+.key .white-key:active,
+.key .white-key.active {
+  box-shadow: inset 0 1px 0px #ffffff, inset 0 -1px 0px #ffffff, inset 1px 0px 0px #ffffff, inset -1px 0px 0px #ffffff, 0 4px 3px rgba(0, 0, 0, 0.7), inset 0 -1px 0px #ffffff, inset 1px 0px 0px #ffffff, inset -1px -1px 15px #000000, -3px 4px 6px rgba(0, 0, 0, 0.5);
+  position: relative;
+  top: -5px;
+  /* height: 295px; */
+  height: 24.3vh;
+}
+.key .black-key {
+  content: "";
+  box-shadow: inset 0px -1px 2px rgba(255, 255, 255, 0.4), 0 2px 3px rgba(0, 0, 0, 0.4);
+  background: -webkit-linear-gradient(-20deg, #222222, #000000, #222222);
+  background: -moz-linear-gradient(-20deg, #222222, #000000, #222222);
+  background: -o-linear-gradient(-20deg, #222222, #000000, #222222);
+  background: linear-gradient(-20deg, #222222, #000000, #222222);
+  border-width: 1px 3px 8px;
+  border-style: solid;
+  border-color: #666 #222 #111 #555;
+  /* height: 160px; */
+  height: 13vh;
+  position: absolute;
+  top: 0px;
+  right: -50%;
+  width: 70%;
+  z-index: 10;
+}
+.key .black-key:active,
+.key .black-key.active {
+  border-bottom-width: 3px;
+  top: 0;
+}
+@media (max-width: 767px) {
+  .key {
+    width: 8%;
+  }
+  .key:nth-child(1),
+  .key:nth-child(2),
+  .key:nth-child(3) {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .key {
+    width: 12%;
+  }
+  .key:nth-child(11),
+  .key:nth-child(12),
+  .key:nth-child(13),
+  .key:nth-child(14) {
+    display: none;
+  }
+}
