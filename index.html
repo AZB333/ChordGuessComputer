@@ -1,26 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Chord Guesser</title>
-  <link href="https:\\fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="chord.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pitch Detector — Chord Guesser</title>
+  <link rel="stylesheet" href="computer.css">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Background Graphics -->
+  <div class="bg-graphics">
+    <div class="wave-line"></div>
+    <div class="wave-line"></div>
+    <div class="wave-line"></div>
+    <canvas id="visualizer" class="audio-visualizer"></canvas>
+  </div>
 
-    <main>
-        <!-- <button class="mic-toggle" id="mic">
-            <span class="material-icons">mic</span>
+  <div class="container">
+    <!-- Header -->
+    <header class="detector-header">
+      <h1 class="title">Pitch Detector</h1>
+      <p class="subtitle">Real-time frequency analysis</p>
+    </header>
+
+    <!-- Main Detection Area -->
+    <main class="detection-area">
+      
+      <!-- Microphone Button -->
+      <div class="mic-container">
+        <button class="mic-toggle" id="mic">
+          <div class="mic-ripple"></div>
+          <div class="mic-ripple"></div>
+          <div class="mic-ripple"></div>
+          <svg class="mic-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+            <line x1="12" y1="19" x2="12" y2="23"></line>
+            <line x1="8" y1="23" x2="16" y2="23"></line>
+          </svg>
         </button>
+        <p class="mic-status" id="mic-status">Click to start</p>
+      </div>
 
-        <audio class="playback" controls></audio> -->
+      <!-- Frequency Display -->
+      <div class="frequency-display">
+        <div class="frequency-label">Detected Frequency</div>
+        <div class="frequency-value-container">
+          <span class="frequency-value" id="pitch">--</span>
+          <span class="frequency-unit">Hz</span>
+        </div>
+        <div class="frequency-note" id="note-display">--</div>
+      </div>
 
+      <!-- Control Buttons -->
+      <div class="control-panel">
+        <button class="btn btn-primary" id="start-btn">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <span>Start Detection</span>
+        </button>
+        <button class="btn btn-secondary" id="stop-btn">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="6" y="4" width="4" height="16"></rect>
+            <rect x="14" y="4" width="4" height="16"></rect>
+          </svg>
+          <span>Stop Detection</span>
+        </button>
+      </div>
 
-        <button id="start-btn">Start Pitch Detection</button>
-        <button id="stop-btn">Stop Pitch Detection</button>
-        <p>Detected Frequency: <span id="pitch">--</span> Hz</p>
+      <!-- Audio Playback (if needed) -->
+      <audio class="playback is-hidden" controls></audio>
+
+      <!-- Stats Panel -->
+      <div class="stats-panel">
+        <div class="stat-item">
+          <span class="stat-label">Peak Frequency</span>
+          <span class="stat-value" id="peak-freq">-- Hz</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-label">Confidence</span>
+          <span class="stat-value" id="confidence">--%</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-label">Status</span>
+          <span class="stat-value" id="detection-status">Idle</span>
+        </div>
+      </div>
+
+      <!-- Waveform Visualization -->
+      <div class="waveform-container">
+        <canvas id="waveform" width="800" height="200"></canvas>
+      </div>
 
     </main>
-<script src="computer.js"></script>
 
+    <!-- Navigation -->
+    <nav class="bottom-nav">
+      <a href="https://aleqzander.com/ChordGuessUser/" class="nav-link">
+        <span class="nav-icon">♪</span>
+        <span>Chord Guesser</span>
+      </a>
+      <a href="https://aleqzander.com/ChordGuessComputer/" class="nav-link active">
+        <span class="nav-icon">🎤</span>
+        <span>Pitch Detector</span>
+      </a>
+    </nav>
+  </div>
+
+  <script src="computer.js"></script>
 </body>
 </html>
